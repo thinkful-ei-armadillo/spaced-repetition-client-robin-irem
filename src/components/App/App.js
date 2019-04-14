@@ -23,7 +23,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <main>
+        <main className='row'>
           {hasError && (
             <p>There was an error! Oh no!</p>
           )}
@@ -37,7 +37,7 @@ export default class App extends Component {
               path={'/learn'}
               component={LearningRoute}
             />
-            <PublicOnlyRoute
+            <PublicOnlyRoute //publicOnlyRoute
               path={'/register'}
               component={RegistrationRoute}
             />
