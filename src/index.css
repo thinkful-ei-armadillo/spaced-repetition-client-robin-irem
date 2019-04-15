@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 1rem;
   font-family: 'Merriweather', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,9 +27,12 @@ html{
 
 header {
   text-align: center;
-  background-color: #309286;
+  background-color: #f1e4e4;
   padding: 2rem;
   font-family: 'Lora', serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 :root {
@@ -37,18 +40,39 @@ header {
 }
 
 a{
-  color: #ebefd0;
+  color: #9764c7;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 nav {
   display: flex;
-  flex-direction: row-reverse;
-  background-color:#309286;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color:#f1e4e4;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem;
 }
 
 .navlinks{
   justify-content: flex-end;
-  margin: 2rem;
+  margin-right: 0.5rem;
+}
+
+button, input{
+  background-color: #f1e4e4;
+}
+
+.logo{
+  border-radius: 70%;
+  width: 4rem;
+  height: 4rem;
+  margin: 0rem;
+  background-color: #f1e4e4;
+  margin-bottom: 0.5rem;
 }

@@ -15,7 +15,7 @@ describe(`User story: Application name and purpose`, function() {
       .get('p')
       .should(
         'have.text',
-        'Practice learning Turkish with the spaced repetition revision technique.'
+        'Practice learning Spanish with the spaced repetition revision technique.'
       )
   })
 })
