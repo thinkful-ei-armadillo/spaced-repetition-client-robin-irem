@@ -1,5 +1,4 @@
-.login-container{
- border: 1px black solid;   
+.login-container{  
  display: flex;
 }
 input{
