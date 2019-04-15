@@ -27,8 +27,8 @@ class DashboardRoute extends Component {
           <h3>Words to practice</h3>
           <div className="list-container">
           <ul>
-            {words.map(word => (
-              <li>
+            {words.map((word, index) => (
+              <li key={index}>
                 <h4>{word.original}</h4>
                 <p>correct answer count: {word.correct_count}</p>
                 <p>incorrect answer count: {word.incorrect_count}</p>

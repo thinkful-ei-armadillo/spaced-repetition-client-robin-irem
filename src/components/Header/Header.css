@@ -60,4 +60,10 @@ nav{
 .logout-container{
   float:right;
 }
-  
+
+@media screen and (max-width: 600px){
+  header, a, .brand {
+    font-size: 9px;
+    margin: auto;
+  } 
+} 
