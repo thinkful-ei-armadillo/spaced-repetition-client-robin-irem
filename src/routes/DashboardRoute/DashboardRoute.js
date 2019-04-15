@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LanguageApiService from '../../services/lang-api-service';
 import LangContext from '../../contexts/LangContext';
 import Button from '../../components/Button/Button';
+import {Link} from 'react-router-dom'
 import './DashboardRoute.css'
 
 class DashboardRoute extends Component {
@@ -21,26 +22,23 @@ class DashboardRoute extends Component {
       <section>
         <div className='summary'>
           <h2>{language.name}</h2>
-         <h2>Total Correct Answers: {language.total_score}</h2>
+         <h2>Total correct answers: {language.total_score}</h2>
         </div>
+          <h3>Words to practice</h3>
           <div className="list-container">
-          <h2>Word To Practice</h2>
-          <table>
-            <tr className='word-list-info-row'>
-              <td>Word</td>
-              <td>Correct</td>
-              <td>Incorrect</td>
-            </tr>
-          {words.map((word,i) => (
-          <tr key={i}>
-            <td id={word.language_id}>{word.original}</td>
-            <td>{word.correct_count}</td>
-            <td>{word.incorrect_count}</td>
-          </tr>
-          ))}
-          </table>
+          <ul>
+            {words.map(word => (
+              <li>
+                <h4>{word.original}</h4>
+                <p>correct answer count: {word.correct_count}</p>
+                <p>incorrect answer count: {word.incorrect_count}</p>
+              </li>
+            ))}
+          </ul>
          </div>
-        <Button className={'start'}>Start Practicing</Button>
+         <Link to='/learn'>
+          <Button className={'start'}>Start practicing</Button>
+         </Link>
       </section>
     );
   }
