@@ -1,3 +1,6 @@
 .list-container{
   border: 1px black solid;
 }
+.word-list-info-row{
+  text-decoration: underline;
+}

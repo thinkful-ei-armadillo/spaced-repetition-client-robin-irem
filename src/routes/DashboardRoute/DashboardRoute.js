@@ -21,11 +21,22 @@ class DashboardRoute extends Component {
       <section>
         <h2>{language.name}</h2>
          <h2>Total Score: {language.total_score}</h2>
-         <h2>Word To Practice</h2>
-         <p>list with words and how many correct and incorrect for each?</p>
-         <div className="list-container">
-         
-         {words.map((word,i) => (<p id={word.language_id} key={i}>{word.original}  {word.translation} {word.incorrect_count} {word.correct_count}</p>))}
+          <div className="list-container">
+          <h2>Word To Practice</h2>
+          <table>
+            <tr className='word-list-info-row'>
+              <td>Word</td>
+              <td>Correct</td>
+              <td>Incorrect</td>
+            </tr>
+          {words.map((word,i) => (
+          <tr key={i}>
+            <td id={word.language_id}>{word.original}</td>
+            <td>{word.correct_count}</td>
+            <td>{word.incorrect_count}</td>
+          </tr>
+          ))}
+          </table>
          </div>
         <Button className={'start'}>Start Practicing</Button>
       </section>
