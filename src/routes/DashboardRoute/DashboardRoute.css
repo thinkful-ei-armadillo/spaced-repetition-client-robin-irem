@@ -4,3 +4,8 @@
 .word-list-info-row{
   text-decoration: underline;
 }
+
+.summary {
+  display: flex;
+  flex-direction: column;
+}

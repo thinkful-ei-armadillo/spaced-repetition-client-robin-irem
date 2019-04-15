@@ -19,8 +19,10 @@ class DashboardRoute extends Component {
     const {language, words = []} = this.context;
     return (
       <section>
-        <h2>{language.name}</h2>
-         <h2>Total Score: {language.total_score}</h2>
+        <div className='summary'>
+          <h2>{language.name}</h2>
+         <h2>Total Correct Answers: {language.total_score}</h2>
+        </div>
           <div className="list-container">
           <h2>Word To Practice</h2>
           <table>
