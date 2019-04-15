@@ -28,19 +28,21 @@ html{
 header {
   text-align: center;
   background-color: #f1e4e4;
-  padding: 2rem;
+  padding-top: .5rem;
+  padding-left: .5rem;
   font-family: 'Lora', serif;
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: space-between;
-  height: 6rem;
+  height: 3rem;
 }
 
 header div{
-  display: inline-block;
+  /* display: inline-block; */
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  float: left;
+  /* flex-direction: row; */
+  /* align-items: center; */
 }
 
 /* header div img{
@@ -57,33 +59,3 @@ a{
   font-size: 1.5rem;
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  background-color:#f1e4e4;
-}
-
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.navlinks{
-  /* justify-content: flex-end; */
-  margin-right: 1rem;
-}
-
-button, input{
-  background-color: #f1e4e4;
-}
-
-.logo{
-  border-radius: 70%;
-  width: 4rem;
-  height: 4rem;
-  margin: 0rem;
-  background-color: #f1e4e4;
-  margin-bottom: 0.5rem;
-}

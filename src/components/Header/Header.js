@@ -14,7 +14,7 @@ class Header extends Component {
 
   renderLogoutLink() {
     return (
-      <div>
+      <div className='logout-container'>
         <span>
           {this.context.user.name}
         </span>
@@ -50,11 +50,10 @@ class Header extends Component {
           </Link>
         </h1>
         </div>
-        <div>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
-        </div>
+      
       </header>
     );
   }

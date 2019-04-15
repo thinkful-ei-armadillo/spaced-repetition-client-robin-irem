@@ -1,13 +1,11 @@
 header{
-    display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    background-color: gray;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 20px;
+    font-size: 15px;
   }
   
   header::after{
@@ -23,5 +21,43 @@ header{
   }
 nav{
     float: right;
-    margin-right: 5px;
+    margin-right: 1em;
   }
+  span{
+    margin-right: 1em;
+  }
+  nav {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* background-color:#f1e4e4; */
+  }
+  
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  .navlinks{
+    /* justify-content: flex-end; */
+    /* float: right; */
+    /* margin-right: 1rem; */
+  }
+  
+  button, input{
+    background-color: #f1e4e4;
+  }
+  
+  .logo{
+    float: left;
+    border-radius: 70%;
+    width: 2rem;
+    height: 2rem;
+    margin: 0rem;
+    margin-bottom: 0.5rem;
+  }
+.logout-container{
+  float:right;
+}
+  
