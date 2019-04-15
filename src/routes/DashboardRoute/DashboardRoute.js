@@ -15,14 +15,6 @@ class DashboardRoute extends Component {
         this.context.setDashboard(language, words)})
       .then(() => console.log(this.context.state))
   }
-//   correct_count: 0
-// id: 2
-// incorrect_count: 0
-// language_id: 1
-// memory_value: 1
-// next: 3
-// original: "hola"
-// translation: "hello"
   render() {
     const {language, words = []} = this.context;
     return (
