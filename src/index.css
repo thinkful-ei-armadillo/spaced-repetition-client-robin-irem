@@ -32,8 +32,20 @@ header {
   font-family: 'Lora', serif;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  height: 6rem;
 }
+
+header div{
+  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* header div img{
+  display: inline-block;
+} */
 
 :root {
   --font-size: calc(10px + 1vmin);
@@ -48,20 +60,19 @@ a{
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   background-color:#f1e4e4;
 }
 
 footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 1rem;
 }
 
 .navlinks{
-  justify-content: flex-end;
-  margin-right: 0.5rem;
+  /* justify-content: flex-end; */
+  margin-right: 1rem;
 }
 
 button, input{

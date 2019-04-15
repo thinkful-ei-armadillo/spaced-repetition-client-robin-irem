@@ -21,7 +21,7 @@ class DashboardRoute extends Component {
       <section>
         <div className='summary'>
           <h2>{language.name}</h2>
-         <h2>Total Correct Answers: {language.total_score}</h2>
+         <h2 className='correct'>Total correct answers: {language.total_score}</h2>
         </div>
           <div className="list-container">
           <h2>Word To Practice</h2>
