@@ -62,8 +62,15 @@ nav{
 }
 
 @media screen and (max-width: 600px){
-  header, a, .brand {
-    font-size: 9px;
+  header {
+    font-size: 11px;
+  }
+  header .brand a{
+    font-size: 11px;
     margin: auto;
-  } 
+  }
+  header .logout a{
+    font-size: 11px;
+    margin: auto;
+  }  
 } 
