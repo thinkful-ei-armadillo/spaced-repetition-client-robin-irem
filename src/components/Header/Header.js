@@ -42,15 +42,19 @@ class Header extends Component {
   render() {
     return (
       <header>
+        <div>
         <img src={logo} className='logo' alt='logo of the site' />
         <h1 className='brand'>
           <Link to='/'>
             Spaced repetition
           </Link>
         </h1>
+        </div>
+        <div>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
+        </div>
       </header>
     );
   }
