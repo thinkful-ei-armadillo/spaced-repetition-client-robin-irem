@@ -15,26 +15,26 @@ export class LangProvider extends Component {
     this.state = {
       language: {},
       words: [], 
-      nextWord: ''
+      head: '',
     }
   }
   setDashboard = (language, words) => {
     this.setState({language, words})
   }
 
-  setNextWord = (nextWord) => {
-    this.setState({nextWord})
+  setNextWord = (head) => {
+    console.log(head)
+    this.setState({head})
   }
 
   render() {
     const value = {
       language: this.state.language,
       words: this.state.words,
-      nextWord: this.state.nextWord,
+      head: this.state.head,
       setDashboard: this.setDashboard,
       setNextWord: this.setNextWord
     }
-    console.log(this.state)
     return (
         <LangContext.Provider value={value}>
           {this.props.children}
