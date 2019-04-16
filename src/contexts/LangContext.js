@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 const LangContext =  React.createContext({
   language: {},
   words: [],
-  setDashboard: () => {}
+  setDashboard: () => {},
+  setNextWord: () => {}
 })
 
 export default LangContext;
@@ -13,17 +14,25 @@ export class LangProvider extends Component {
     super(props);
     this.state = {
       language: {},
-      words: []
+      words: [], 
+      nextWord: ''
     }
   }
   setDashboard = (language, words) => {
     this.setState({language, words})
   }
+
+  setNextWord = (nextWord) => {
+    this.setState({nextWord})
+  }
+
   render() {
     const value = {
       language: this.state.language,
       words: this.state.words,
-      setDashboard: this.setDashboard
+      nextWord: this.state.nextWord,
+      setDashboard: this.setDashboard,
+      setNextWord: this.setNextWord
     }
     console.log(this.state)
     return (
