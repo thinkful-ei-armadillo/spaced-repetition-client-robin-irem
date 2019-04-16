@@ -6,30 +6,42 @@ header{
     left: 0;
     right: 0;
     font-size: 15px;
+    display: flex;
+    justify-content: space-between;
   }
   
-  header::after{
+  /* header::after{
     display: table;
     content: '';
-  }
+  } */
+
+#header-left{
+ align-self: flex-start;
+}
+
+#header-right{
+  align-self: flex-start;
+ }
+
 .brand{
     font-size: 16px;
-    color: black;
-    float: left;
+    /* color: black; */
+    /* float: left; */
     margin-top: 0px;
     padding-left: 5px;
   }
 nav{
-    float: right;
-    margin-right: 1em;
+    /* float: right; */
+    /* margin-right: 1em; */
   }
   span{
-    margin-right: 1em;
+    /* margin-right: 1em; */
   }
   nav {
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* background-color:#f1e4e4; */
+    /* display: flex;
+    flex-direction: row; */
+    background-color:#f1e4e4;
+    margin-left: 5rem;
   }
   
   footer {
@@ -40,9 +52,9 @@ nav{
   }
   
   .navlinks{
-    /* justify-content: flex-end; */
+    justify-content: flex-end;
     /* float: right; */
-    /* margin-right: 1rem; */
+    margin-right: 1rem;
   }
   
   button, input{
@@ -50,7 +62,8 @@ nav{
   }
   
   .logo{
-    float: left;
+    /* float: left; */
+    align-self: flex-start;
     border-radius: 70%;
     width: 2rem;
     height: 2rem;
@@ -58,19 +71,57 @@ nav{
     margin-bottom: 0.5rem;
   }
 .logout-container{
-  float:right;
+  /* float:right; */
+  align-self: flex-end;
 }
 
-@media screen and (max-width: 600px){
-  header {
-    font-size: 11px;
+@media screen and (min-width: 360px){
+  nav {
+    background-color:#f1e4e4;
+    margin-left:10rem;
+  } 
+} 
+
+@media screen and (min-width: 400px){
+  nav {
+    background-color:#f1e4e4;
+    margin-left:13rem;
+  } 
+
+.logo {
+    margin-left: 1rem;
   }
-  header .brand a{
-    font-size: 11px;
-    margin: auto;
+} 
+
+@media screen and (min-width: 700px){
+  nav {
+    background-color:#f1e4e4;
+    margin-left:40rem;
+  } 
+
+.logo {
+    margin-left: 4rem;
   }
-  header .logout a{
-    font-size: 11px;
-    margin: auto;
-  }  
+}
+
+@media screen and (min-width: 840px){
+  nav {
+    background-color:#f1e4e4;
+    margin-left:35rem;
+  } 
+
+.logo {
+    margin-left: 10rem;
+  }
+} 
+
+@media screen and (min-width: 840px){
+  nav {
+    background-color:#f1e4e4;
+    margin-left:50rem;
+  } 
+
+.logo {
+    margin-left: 10rem;
+  }
 } 
