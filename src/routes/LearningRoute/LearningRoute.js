@@ -11,7 +11,7 @@ class LearningRoute extends Component {
       showResults:false,
       totalScore: '',
       results: {},
-      isCorrect: false,
+      isCorrect: null,
       guess: ''
     }
   }
@@ -25,47 +25,51 @@ class LearningRoute extends Component {
     this.setState({guess: translateValue})
     LanguageApiService.submitUserAnwer(translateValue)
       .then(res => {
-        
         this.setState({results: res, showResults: true})
-        // console.log('state results',this.state.results)
-
-// answer: "welcome"
-// isCorrect: false
-// nextWord: "hola"
-// totalScore: 0
-// wordCorrectCount: 0
-// wordIncorrectCount: 1
       })
+    this.formRef.reset();
   }
 
-renderResults (){
-    const { answer, totalScore } = this.state.results
-    console.log(this.state.results)
-return(
-    <section>
-      {this.state.isCorrect ?<h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :( </h2>}
-        <p>Your total score is: {totalScore}</p>
-        <p>The correct translation for ${this.context.nextWord} was ${answer} and you chose ${this.state.guess}!</p>
-        {/* <button>Try another word!</button> */}
-    </section>
-      )
+  handleNextWord =(results)=>{
+    this.context.setNextWord(results)
+    this.setState({showResults: false})
   }
-  render() {
-    
+
+renderQuestion(){
   const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.context
-    return (
-      <section>
+  return (
+      <section className='results_container'>
         <h2>Translate the word: {nextWord}</h2>
         <p>Your total score is: {totalScore}</p>
         <p>"You have answered this word correctly {wordCorrectCount} times." </p>
         <p>"You have answered this word incorrectly {wordIncorrectCount} times."</p>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} ref={(ref) => this.formRef = ref}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
           <input type='text' required name='learn-guess-input' ref={this.translateInput} placeholder='Whats the translation for this word?'/>
           <input type='submit' name='submit' value='Submit your answer'/>
          </form>
-         {this.state.showResults && this.renderResults}
-      </section>   
+      </section> )
+}
+
+renderResults (){
+    const { isCorrect, answer, totalScore} = this.state.results
+return(
+    <section>
+      {isCorrect ? <h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :( </h2>}
+        <p>Your total score is: {totalScore}</p>
+        <p>The correct translation for {this.context.nextWord} was {answer} and you chose w{this.state.guess}!</p>
+        <button onClick={()=>this.handleNextWord(this.state.results)}>Try another word!</button>
+    </section>
+      )
+  }
+
+  
+  render() {
+
+    return (
+      <React.Fragment>
+        {this.state.showResults ? this.renderResults(): this.renderQuestion()}
+      </React.Fragment> 
       );
   }
 }
