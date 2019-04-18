@@ -12,7 +12,8 @@ class DashboardRoute extends Component {
     LanguageApiService.getAllWords()
       .then(res => {
         const {language, words} = res;
-        this.context.setDashboard(language, words)})
+        this.context.setDashboard(language, words)
+      })
   }
 
   render() {
