@@ -15,7 +15,7 @@ class Header extends Component {
   renderLogoutLink() {
     return (
       <div className='logout-container'>
-        <span>
+        <span className='navlinks'>
           {this.context.user.name}
         </span>
         <nav className='navlinks'>
@@ -31,7 +31,7 @@ class Header extends Component {
 
   renderLoginLink() {
     return (
-      <nav>
+      <nav role="navigation">
         <Link to='/login' className='navlinks'>Login </Link>
         {' '}
         <Link to='/register'>Sign up</Link>
@@ -41,7 +41,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header role="banner">
         <div id='header-left'>
         <img src={logo} className='logo' alt='logo of the site' />
         <h1 className='brand'>

@@ -57,13 +57,13 @@ return(
     <section>
       {isCorrect ? <h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :( </h2>}
         <p>Your total score is: {totalScore}</p>
-        <p>The correct translation for {this.context.nextWord} was {answer} and you chose w{this.state.guess}!</p>
+        <p>The correct translation for {this.context.nextWord} was {answer} and you chose {this.state.guess}!</p>
         <button onClick={()=>this.handleNextWord(this.state.results)}>Try another word!</button>
     </section>
       )
   }
 
-  
+
   render() {
 
     return (

@@ -23,6 +23,13 @@ li{
 }
 
 .correct {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-left: 1.4rem;
+}
+
+@media screen and (min-width: 500px){
+  .list-container{
+    padding-left: 5rem;
+    padding-right: 25rem;
+  }
 }
