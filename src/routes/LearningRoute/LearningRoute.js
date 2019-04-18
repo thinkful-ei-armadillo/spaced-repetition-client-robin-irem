@@ -9,7 +9,10 @@ class LearningRoute extends Component {
     this.translateInput = React.createRef();
     this.state = {
       showResults:false,
-      results: []
+      totalScore: '',
+      results: [],
+      isCorrect: false,
+      guess: ''
     }
   }
   componentDidMount(){
@@ -22,27 +25,26 @@ class LearningRoute extends Component {
     LanguageApiService.submitUserAnwer(translateValue)
       .then(res => {
         console.log(res)
-        this.setState({results: res})
-        this.setState({showResults: true})
+        // this.setState({results: res})
+        // this.setState({showResults: true})
+
+// answer: "welcome"
+// isCorrect: false
+// nextWord: "hola"
+// totalScore: 0
+// wordCorrectCount: 0
+// wordIncorrectCount: 1
       })
   }
 
   renderResults (){
 return(
     <section>
-        {if (res.isCorrect){
-              return (
-                <h2>You were correct! :D</h2>  
-              )}
-          else{
-              return(
-                  <h2>Good try, but not quite right :( </h2>
-                    )}
-        }
-        <p>Your total score is: {res.totalScore}</p>
-        <pThe correct translation for ${nextWord} was ${nextWord.answer} and you chose ${guess}!>
+      {this.state.isCorrect ?<h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :( </h2>}
+        <p>Your total score is: {this.state.totalScore}</p>
+        <p>The correct translation for ${this.context.nextWord} was ${this.state.answer} and you chose ${this.state.guess}!</p>
         <button>Try another word!</button>
-      </section>
+    </section>
       )
   }
   render() {
