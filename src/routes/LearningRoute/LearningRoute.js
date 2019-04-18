@@ -39,14 +39,14 @@ renderQuestion(){
   const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.context
   return (
       <section className='results_container'>
-        <h2>Translate the word: {nextWord}</h2>
+        <h2>Translate the word:</h2> <span>{nextWord}</span>
         <p>Your total score is: {totalScore}</p>
         <p>"You have answered this word correctly {wordCorrectCount} times." </p>
         <p>"You have answered this word incorrectly {wordIncorrectCount} times."</p>
         <form onSubmit={this.handleSubmit} ref={(ref) => this.formRef = ref}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
-          <input type='text' required name='learn-guess-input' ref={this.translateInput} placeholder='Whats the translation for this word?'/>
-          <input type='submit' name='submit' value='Submit your answer'/>
+          <input type='text' required name='learn-guess-input' id="learn-guess-input" ref={this.translateInput} placeholder='Whats the translation for this word?'/>
+          <button type='submit' name='submit'>Submit your answer</button>
          </form>
       </section> )
 }
@@ -54,12 +54,16 @@ renderQuestion(){
 renderResults (){
     const { isCorrect, answer, totalScore} = this.state.results
 return(
-    <section>
-      {isCorrect ? <h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :( </h2>}
+  <React.Fragment>
+    <section className='DisplayScore'>
+      {isCorrect ? <h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :(</h2>}
         <p>Your total score is: {totalScore}</p>
-        <p>The correct translation for {this.context.nextWord} was {answer} and you chose w{this.state.guess}!</p>
         <button onClick={()=>this.handleNextWord(this.state.results)}>Try another word!</button>
     </section>
+    <section className='DisplayFeedback'>
+       <p>The correct translation for {this.context.nextWord} was {answer} and you chose {this.state.guess}!</p>
+    </section>
+  </React.Fragment>
       )
   }
 
