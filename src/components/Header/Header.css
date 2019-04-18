@@ -20,7 +20,7 @@ header{
 }
 
 #header-right{
-  align-self: flex-start;
+  align-self: flex-end;
  }
 
 .brand{

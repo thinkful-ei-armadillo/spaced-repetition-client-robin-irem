@@ -7,6 +7,10 @@ class LearningRoute extends Component {
   constructor(props){
     super()
     this.translateInput = React.createRef();
+    this.state = {
+      showResults:false,
+      results: []
+    }
   }
   componentDidMount(){
     LanguageApiService.getWord().then(res => this.context.setNextWord(res))
@@ -16,7 +20,30 @@ class LearningRoute extends Component {
     e.preventDefault()
     const translateValue = this.translateInput.current.value;
     LanguageApiService.submitUserAnwer(translateValue)
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res)
+        this.setState({results: res})
+        this.setState({showResults: true})
+      })
+  }
+
+  renderResults (){
+return(
+    <section>
+        {if (res.isCorrect){
+              return (
+                <h2>You were correct! :D</h2>  
+              )}
+          else{
+              return(
+                  <h2>Good try, but not quite right :( </h2>
+                    )}
+        }
+        <p>Your total score is: {res.totalScore}</p>
+        <pThe correct translation for ${nextWord} was ${nextWord.answer} and you chose ${guess}!>
+        <button>Try another word!</button>
+      </section>
+      )
   }
   render() {
     
@@ -32,19 +59,8 @@ class LearningRoute extends Component {
           <input type='text' required name='learn-guess-input' ref={this.translateInput} placeholder='Whats the translation for this word?'/>
           <input type='submit' name='submit' value='Submit your answer'/>
          </form>
-      </section>
-//DisplayScore p
-      //total score , h2 `Good try, but not quite right :(`,
-      // .DisplayFeedback p'`The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`
-    // 'have.text',
-   // `Try another word!`,
-//button
-
-   //corect
-    //h2 `You were correct! :D`,
-   // .DisplayScore p `Your total score is: ${incorrectFixture.totalScore}`,
-    // DisplayFeedback p `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`
-
+         {this.state.showResults && this.renderResults}
+      </section>   
       );
   }
 }
