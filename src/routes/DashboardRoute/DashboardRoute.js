@@ -9,20 +9,19 @@ class DashboardRoute extends Component {
   static contextType = LangContext;
 
   componentDidMount(){
-    
     LanguageApiService.getAllWords()
       .then(res => {
         const {language, words} = res;
         this.context.setDashboard(language, words)})
-      .then(() => console.log(this.context.state))
   }
+
   render() {
     const {language, words = []} = this.context;
     return (
       <section>
         <div className='summary'>
           <h2>{language.name}</h2>
-         <h2 className='correct'>Total correct answers: {language.total_score}</h2>
+          <h2 className='correct'>Total correct answers: {language.total_score}</h2>
         </div>
           <h3>Words to practice</h3>
           <div className="list-container">
