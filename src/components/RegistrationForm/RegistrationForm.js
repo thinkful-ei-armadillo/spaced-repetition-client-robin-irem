@@ -78,7 +78,7 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <footer>
+        <footer role='contenfino'>
           <Button type='submit'>
             Sign up
           </Button>
