@@ -10,7 +10,7 @@ class LearningRoute extends Component {
     this.state = {
       showResults:false,
       totalScore: '',
-      results: [],
+      results: {},
       isCorrect: false,
       guess: ''
     }
@@ -22,11 +22,12 @@ class LearningRoute extends Component {
   handleSubmit= e =>{
     e.preventDefault()
     const translateValue = this.translateInput.current.value;
+    this.setState({guess: translateValue})
     LanguageApiService.submitUserAnwer(translateValue)
       .then(res => {
-        console.log(res)
-        // this.setState({results: res})
-        // this.setState({showResults: true})
+        
+        this.setState({results: res, showResults: true})
+        // console.log('state results',this.state.results)
 
 // answer: "welcome"
 // isCorrect: false
@@ -37,13 +38,15 @@ class LearningRoute extends Component {
       })
   }
 
-  renderResults (){
+renderResults (){
+    const { answer, totalScore } = this.state.results
+    console.log(this.state.results)
 return(
     <section>
       {this.state.isCorrect ?<h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :( </h2>}
-        <p>Your total score is: {this.state.totalScore}</p>
-        <p>The correct translation for ${this.context.nextWord} was ${this.state.answer} and you chose ${this.state.guess}!</p>
-        <button>Try another word!</button>
+        <p>Your total score is: {totalScore}</p>
+        <p>The correct translation for ${this.context.nextWord} was ${answer} and you chose ${this.state.guess}!</p>
+        {/* <button>Try another word!</button> */}
     </section>
       )
   }
