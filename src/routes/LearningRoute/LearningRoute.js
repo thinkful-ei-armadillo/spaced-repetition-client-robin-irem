@@ -33,7 +33,19 @@ class LearningRoute extends Component {
           <input type='submit' name='submit' value='Submit your answer'/>
          </form>
       </section>
-    );
+//DisplayScore p
+      //total score , h2 `Good try, but not quite right :(`,
+      // .DisplayFeedback p'`The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`
+    // 'have.text',
+   // `Try another word!`,
+//button
+
+   //corect
+    //h2 `You were correct! :D`,
+   // .DisplayScore p `Your total score is: ${incorrectFixture.totalScore}`,
+    // DisplayFeedback p `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`
+
+      );
   }
 }
 
