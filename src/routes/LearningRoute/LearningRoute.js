@@ -58,6 +58,7 @@ return(
   <React.Fragment>
     <section className='DisplayScore'>
       {isCorrect ? <h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :(</h2>}
+        <br/>
         <p>Your total score is: {totalScore}</p> 
     </section>
     <section className='DisplayFeedback'>
