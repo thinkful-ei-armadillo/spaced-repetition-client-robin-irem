@@ -28,7 +28,7 @@ export default class App extends Component {
             <p>There was an error! Oh no!</p>
           )}
           <Switch>
-            <PrivateRoute //privateroute
+            <PrivateRoute
               exact
               path={'/'}
               component={DashboardRoute}
@@ -37,7 +37,7 @@ export default class App extends Component {
               path={'/learn'}
               component={LearningRoute}
             />
-            <PublicOnlyRoute //publicOnlyRoute
+            <PublicOnlyRoute
               path={'/register'}
               component={RegistrationRoute}
             />

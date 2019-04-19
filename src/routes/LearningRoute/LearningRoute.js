@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import LangContext from '../../contexts/LangContext';
 import LanguageApiService from '../../services/lang-api-service';
+import Button from '../../components/Button/Button';
+import {Label, Input} from '../../components/Form/Form'
 import './LearningRoute.css'
 
 class LearningRoute extends Component {
   static contextType = LangContext
-  constructor(props){
+  constructor(){
     super()
     this.translateInput = React.createRef();
     this.state = {
@@ -16,67 +18,79 @@ class LearningRoute extends Component {
       guess: ''
     }
   }
-  componentDidMount(){
+
+  componentDidMount () {
     LanguageApiService.getWord().then(res => this.context.setNextWord(res))
   }
 
-  handleSubmit= e =>{
+  handleSubmit = e =>{
     e.preventDefault()
-    const translateValue = this.translateInput.current.value;
-    this.setState({guess: translateValue})
-    LanguageApiService.submitUserAnwer(translateValue)
+    const guess = this.translateInput.current.value;
+    this.setState({guess})
+    LanguageApiService.submitUserAnwer(guess)
       .then(res => {
         this.setState({results: res, showResults: true})
       })
     this.formRef.reset();
   }
 
-  handleNextWord =(results)=>{
+  handleNextWord = results => {
     this.context.setNextWord(results)
     this.setState({showResults: false})
   }
 
-renderQuestion(){
-  const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.context
-  return (
+  renderQuestion () {
+    const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.context
+    return (
       <section className='results_container'>
         <h2 className='translate-text'>Translate the word:</h2> <span className="translate-word">{nextWord}</span>
         <p>Your total score is: {totalScore}</p>
         <p>You have answered this word correctly {wordCorrectCount} times.</p>
         <p>You have answered this word incorrectly {wordIncorrectCount} times.</p>
         <form onSubmit={this.handleSubmit} ref={(ref) => this.formRef = ref}>
-          <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
-          <input type='text' required name='learn-guess-input' id="learn-guess-input" ref={this.translateInput} placeholder='Whats the translation for this word?'/>
-          <button type='submit' name='submit'>Submit your answer</button>
+          <Label htmlFor='learn-guess-input'>
+            What's the translation for this word?
+          </Label>
+          <Input  id='learn-guess-input'
+            name='learn-guess-input'
+            type='text'
+            ref={this.translateInput} 
+            placeholder='Whats the translation for this word?'
+            required
+          />
+          <Button type='submit'>
+            Submit your answer
+          </Button>
          </form>
-      </section> )
-}
-
-renderResults (){
-    const { isCorrect, answer, totalScore} = this.state.results
-return(
-  <React.Fragment>
-    <section className='DisplayScore'>
-      {isCorrect ? <h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :(</h2>}
-        <br/>
-        <p>Your total score is: {totalScore}</p> 
-    </section>
-    <section className='DisplayFeedback'>
-       <p>The correct translation for {this.context.nextWord} was {answer} and you chose {this.state.guess}!</p>
-       <button onClick={()=>this.handleNextWord(this.state.results)}>Try another word!</button>
-    </section>
-  </React.Fragment>
-      )
+      </section>
+    )
   }
 
+  renderResults () {
+    const { isCorrect, answer, totalScore} = this.state.results
+    return(
+      <React.Fragment>
+        <section className='DisplayScore'>
+          {isCorrect ? <h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :(</h2>}
+            <br/>
+            <p>Your total score is: {totalScore}</p> 
+        </section>
+        <section className='DisplayFeedback'>
+          <p>The correct translation for {this.context.nextWord} was {answer} and you chose {this.state.guess}!</p>
+          <Button onClick={()=>this.handleNextWord(this.state.results)}>
+            Try another word!
+          </Button>
+        </section>
+      </React.Fragment>
+    )
+  }
 
   render() {
-
     return (
       <React.Fragment>
-        {this.state.showResults ? this.renderResults(): this.renderQuestion()}
+        {this.state.showResults ? this.renderResults() : this.renderQuestion()}
       </React.Fragment> 
-      );
+    )
   }
 }
 

@@ -26,7 +26,7 @@ const LanguageService = {
             : res.json()
         )
     },
-    submitUserAnwer(value){
+    submitUserAnwer(guess){
       return fetch(`${config.API_ENDPOINT}/language/guess`, {
         method: 'POST',
         headers: {
@@ -34,7 +34,7 @@ const LanguageService = {
           'authorization': `Bearer ${TokenService.getAuthToken()}`
         },
         body: JSON.stringify({
-          guess: value
+          guess
         }),
       })
         .then(res =>
