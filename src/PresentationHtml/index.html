@@ -10,41 +10,62 @@
 <body>
      <main role='main'>
       <div class='spacedRepetition-app row'>
-        <section class='col-7' id="overview">
-          <h3>Spaced Repetition</h3>
-          <p class='spacedRepetion-desc'> project introduction/description - overview </p>
-          <a href="">Live </a>  <span> | </span> 
-          <a href=''>GitHub </a> 
-          <img src="./pictures/Spaced-Translation.png" class='col-4' alt="">
+        <section class='spacedRepetion-desc' > 
+          <h1>Spaced Repetition: SpadesSpanish -- ♠Spanish -- </h1>
+          <h2> Project overview </h2>
+          <div id="overview" class="imagedBox">
+            <div>
+            <p>♠Spanish is a fullstack app, optimized with computer science.</p>
+            <p>♠Spanish helps users learn Spanish easily with spaced repetition learning technique.</p>
+            <a href="https://robin-irem-spaced-repetition-app.now.sh/register">Live </a>  <span> | </span> 
+            <a href='https://github.com/thinkful-ei-armadillo/spaced-repetition-client-robin-irem'>Client Repo</a> <span> | </span> 
+            <a href='https://github.com/thinkful-ei-armadillo/spaced-repetition-server-robin-irem'>Server Repo</a> 
+          </div>
+            <img src="./pictures/Spaced-Translation.png" class="correct" alt="">
+        </div>
         </section>  
-        <section className='row'>
-          <h2>Why Us</h2>
-          <p>value proposition - what features does your project have, advantages over competition</p>
-        </section>
         <section class='row' id="design">
           <h3>How Does it work?</h3>
-          <p>  application features - 
-            problems/challenges people have
-            solution your project provides to users</p>
-          
-          <img src="./pictures/Spaced-Correct.png" class='col-4'alt=""> 
+          <p>The app requires a user to register for an account. Afterwards, when they sign up, the user accesses the dashboard where a list of words appear.</p>
+          <p>The users can see their progress by skimming the dashboard quickly, taking all the correct and incorrect past practices</p>
+          <p>If they choose to start practicing, the app would simply provide whereever they left with their practice.</p>
+          <p>The algorithm would give them the needed word for the correct implementation of spaced repetition technique.</p>
+          <p>The most challenging part of learning a language is repetition and retaining new vocabulary.</p>
+          <p>♠Spanish helps users pratice without flashcards and in the way that they will retain their newly acquired vocabulary for a lifetime!</p> 
         </section>
+        <section>
+            <h3>Why Us</h3>
+            <div class='imagedBox'>
+            <div>
+              <p>♠Spanish makes use of the spaced repetition techniques, known for its positive outcomes especially learning a large number of new items, such as vocabulary. </p>
+              <p>It implements the technique by using a data structure (singly linked list).</p>
+              <p>User can concentrate solely on words because of ♠Spanish's simple design and soft colors!</p>
+            </div>
+              <img src="./pictures/Spaced-Correct.png" class="correct" alt="">
+          </div>
+          </section>
         <section class='col-7' id="technology">
           <h3 id="technology">Technologies Used:</h3> 
           <ul class='tech-list'>
-            <li>front-end: </li>
-            <li>Back-end: </li>
-            <li>hosting: </li>
-            <li>development enviroment - build process /tools/apps </li>
+            <li>Front-end: React (Router, Context), Cypress</li>
+            <li>Back-end: Node.js, Express, Postgres, Mocha/Chai </li>
+            <li>Deployment: NOW/Zeit, Heroku </li>
+            <li>Development: Git, GitHub </li>
           </ul>
-          <p> lesson learned  -- process, planning, development, coordination, 
-            what did you learned
-            what would do you differently
-          developement and technology: pros and cons</p>
-          <p> next steps: addittional, features go public, make millions</p>
-          <p>demo - app</p>
-          
-          <img src="./pictures/Spaced-dashboard.png" class='spaced-main col-4' alt="">
+        </section>
+        <section>
+          <h3> Reflection:</h3>
+          <div class="reversedImagedBox">
+            <div>
+              <p>For once, we truly did a test driven development. We needed to design and develop accordingly in order to comply with the given tests.</p>
+              <p>Separation of tasks help manage the project better.</p>
+              <p>Still, pair programming adds the greatest value to a project as partners can use their different areas of strengths to further the project.</p>
+              <p>We could, maybe, improve the project by keeping track of each issue on our kanban board.</p>
+              <p>Implementation of DSA into a fullstack project is both challenging yet rewarding</p>
+              <p> Next steps: it would be nice to have images and audio features for each word as that would tap to other ways of learning too.</p>
+            </div>
+              <img src="./pictures/Spaced-dashboard.png" class='screenshot' alt="">
+          </div>
         </section>  
       </div>
       </main>
