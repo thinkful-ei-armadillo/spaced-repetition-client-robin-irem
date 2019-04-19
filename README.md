@@ -1,9 +1,9 @@
 # Spaced Repetition: SpadesSpanish -- ♠Spanish
 
-♠Spanish is a fullstack app, optimized with computer science.\
+♠Spanish is a fullstack app, optimized with computer science.  
 ♠Spanish helps users learn Spanish easily with spaced repetition learning technique.
 
-The most challenging part of learning a language is repetition and retaining new vocabulary. \
+The most challenging part of learning a language is repetition and retaining new vocabulary.  
 ♠Spanish helps users pratice without flashcards and in the way that they will retain their newly acquired vocabulary for a lifetime!
 
 ♠Spanish implements the spaced repetition learning technique by using a data structure (singly linked list).
@@ -21,9 +21,9 @@ Server repo: https://github.com/thinkful-ei-armadillo/spaced-repetition-server-r
 Robin Khiv and Irem Secil Reel Sen
 
 ## Technologies:
-Front-end: React (Router, Context), Cypress\
-Back-end: Node.js, Express, Postgres, Mocha/Chai\
-Deployment: NOW/Zeit, Heroku\
+Front-end: React (Router, Context), Cypress  
+Back-end: Node.js, Express, Postgres, Mocha/Chai  
+Deployment: NOW/Zeit, Heroku  
 Development: Git, GitHub
 
 ## Setup
