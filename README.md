@@ -13,7 +13,7 @@ User can concentrate solely on words because of ♠Spanish's simple design and s
 The app requires a user to register for an account. Afterwards, when they sign up, the user accesses the dashboard where a list of words appear. The users can see their progress by skimming the dashboard quickly, seeing all the correct and incorrect answers. If they choose to start practicing, the app would simply provide whereever they left with their practice.
 
 ## Deployment: 
-Live app: https://robin-irem-spaced-repetition-app.now.sh/register  
+Live app: https://robin-irem-spaced-repetition-app.now.sh/
 Client repo: https://github.com/thinkful-ei-armadillo/spaced-repetition-client-robin-irem  
 Server repo: https://github.com/thinkful-ei-armadillo/spaced-repetition-server-robin-irem
 
@@ -35,7 +35,7 @@ To setup the application
 
 The project expects you have the Spaced repetition API project setup and running on http://localhost:8000.
 
-Find instructions to setup the API here https://github.com/Thinkful-Ed/spaced-repetition-api.
+Find instructions to setup the API here https://github.com/thinkful-ei-armadillo/spaced-repetition-server-robin-irem.
 
 ## Running project
 
