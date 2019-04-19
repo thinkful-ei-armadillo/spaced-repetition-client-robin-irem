@@ -42,8 +42,8 @@ renderQuestion(){
       <section className='results_container'>
         <h2 className='translate-text'>Translate the word:</h2> <span className="translate-word">{nextWord}</span>
         <p>Your total score is: {totalScore}</p>
-        <p>"You have answered this word correctly {wordCorrectCount} times." </p>
-        <p>"You have answered this word incorrectly {wordIncorrectCount} times."</p>
+        <p>You have answered this word correctly {wordCorrectCount} times.</p>
+        <p>You have answered this word incorrectly {wordIncorrectCount} times.</p>
         <form onSubmit={this.handleSubmit} ref={(ref) => this.formRef = ref}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
           <input type='text' required name='learn-guess-input' id="learn-guess-input" ref={this.translateInput} placeholder='Whats the translation for this word?'/>
