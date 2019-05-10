@@ -76,6 +76,11 @@ class LoginForm extends Component {
           <Button type='submit'>
            Login
           </Button>
+          <h3>For testing</h3>
+          <p>username: admin
+          <br/>
+          login: pass
+          </p>
       </form>
     )
   }

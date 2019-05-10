@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "alias": "robin-irem-spaced-repetition-app",
+    "alias": "spades-spanish",
     "name": "spaced-repetition-app",
     "routes": [
       {
