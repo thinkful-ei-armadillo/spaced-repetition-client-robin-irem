@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "alias": "spades-spanish",
+    "alias": "learnspanish",
     "name": "spaced-repetition-app",
     "routes": [
       {
