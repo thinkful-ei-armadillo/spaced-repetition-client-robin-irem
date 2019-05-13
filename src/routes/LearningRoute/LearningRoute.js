@@ -15,7 +15,8 @@ class LearningRoute extends Component {
       totalScore: '',
       results: {},
       isCorrect: null,
-      guess: ''
+      guess: '',
+      note: 'hello'
     }
   }
 
@@ -42,7 +43,7 @@ class LearningRoute extends Component {
   renderQuestion () {
     const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.context
     return (
-      <section className='results_container'>
+      <section className='results_container col-6'>
         <h2 className='translate-text'>Translate the word:</h2> <span className="translate-word">{nextWord}</span>
         <p>Your total score is: {totalScore}</p>
         <p>You have answered this word correctly {wordCorrectCount} times.</p>
@@ -70,12 +71,12 @@ class LearningRoute extends Component {
     const { isCorrect, answer, totalScore} = this.state.results
     return(
       <React.Fragment>
-        <section className='DisplayScore'>
+        <section className='DisplayScore col-6'>
           {isCorrect ? <h2>You were correct! :D</h2>  :  <h2>Good try, but not quite right :(</h2>}
             <br/>
             <p>Your total score is: {totalScore}</p> 
         </section>
-        <section className='DisplayFeedback'>
+        <section className='DisplayFeedback col-6'>
           <p>The correct translation for {this.context.nextWord} was {answer} and you chose {this.state.guess}!</p>
           <Button onClick={()=>this.handleNextWord(this.state.results)}>
             Try another word!

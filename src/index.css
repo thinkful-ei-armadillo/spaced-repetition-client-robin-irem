@@ -18,6 +18,8 @@ body {
 
 main{
   background-color: #b4e9e2;
+  display:flex;
+  flex-direction: column;
 }
 
 html{
