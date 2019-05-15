@@ -38,20 +38,35 @@ class Header extends Component {
       </nav>
     )
   }
+  renderLandingPage(){
+    return (
+      <Link to='/'>
+        Spaced repetition
+      </Link>
+    )
+  }
+  renderHomeRoute(){
+    return (
+      <Link to="/dashboard">
+        Spaced repetition
+      </Link>
+    )
+  }
 
   render() {
+    const isUserLoggedIn = TokenService.hasAuthToken();
     return (
       <header role="banner">
         <div id='header-left'>
         <img src={logo} className='logo' alt='logo of the site' />
         <h1 className='brand'>
-          <Link to='/'>
-            Spaced repetition
-          </Link>
+        {isUserLoggedIn
+          ? this.renderHomeRoute()
+          : this.renderLandingPage()}
         </h1>
         </div>
         <div id='header-right'>
-        {TokenService.hasAuthToken()
+        {isUserLoggedIn
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
         </div>

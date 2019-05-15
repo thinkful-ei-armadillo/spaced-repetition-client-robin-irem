@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
-      <section className="onboarding">
+      <section className="onboarding col-6">
         <h2 id="onboard-title">Welcome to Spades Spanish! </h2>
         <p>
           This app is built to help learn Spanish with spaced repetition 
