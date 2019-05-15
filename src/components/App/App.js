@@ -9,6 +9,7 @@ import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute'
 import LearningRoute from '../../routes/LearningRoute/LearningRoute'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
 import './App.css'
+import HomePage from '../HomePage/HomePage';
 
 export default class App extends Component {
   state = { hasError: false }
@@ -28,9 +29,14 @@ export default class App extends Component {
             <p>There was an error! Oh no!</p>
           )}
           <Switch>
+            <Route
+              exact 
+              path={'/'}
+              component={HomePage}
+            />
             <PrivateRoute
               exact
-              path={'/'}
+              path={'/dashboard'}
               component={DashboardRoute}
             />
             <PrivateRoute

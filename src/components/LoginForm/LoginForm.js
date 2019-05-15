@@ -76,7 +76,7 @@ class LoginForm extends Component {
           <Button type='submit'>
            Login
           </Button>
-          <h3>For testing</h3>
+          <h3>For testing, you may use this demo user</h3>
           <p>username: admin
           <br/>
           login: pass
